@@ -10,9 +10,14 @@ $clienteController = new ClienteController($clienteService);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['criar'])) {
-        $clienteController->criarCliente($_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['endereco'], $_POST['telefone'], $_POST['email']);
-    } elseif (isset($_POST['editar'])) {
-        $clienteController->editarCliente($_POST['id'], $_POST['nome'], $_POST['data_nascimento'], $_POST['cpf'], $_POST['endereco'], $_POST['telefone'], $_POST['email']);
+        $clienteController->criarCliente(
+            $_POST['nome'],
+            $_POST['data_nascimento'],
+            $_POST['cpf'],
+            $_POST['endereco'],
+            $_POST['telefone'],
+            $_POST['email']
+        );
     } elseif (isset($_POST['deletar'])) {
         $clienteController->deletarCliente($_POST['id']);
     }
@@ -45,23 +50,15 @@ $clientes = $clienteController->listarClientes();
     <ul>
         <?php foreach ($clientes as $cliente): ?>
             <li>
-                <?= $cliente->nome ?> - <?= $cliente->data_nascimento ?> - <?= $cliente->cpf ?> - <?= $cliente->endereco ?> - <?= $cliente->telefone ?> - <?= $cliente->email ?>
+                <?= htmlspecialchars($cliente->nome) ?> - <?= htmlspecialchars($cliente->data_nascimento) ?> - <?= htmlspecialchars($cliente->cpf) ?> - <?= htmlspecialchars($cliente->endereco) ?> - <?= htmlspecialchars($cliente->telefone) ?> - <?= htmlspecialchars($cliente->email) ?>
                 <form method="POST" style="display:inline;">
-                    <input type="hidden" name="id" value="<?= $cliente->id ?>">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($cliente->id) ?>">
                     <button type="submit" name="deletar">Deletar</button>
                 </form>
-                <form method="POST" style="display:inline;">
-                    <input type="hidden" name="id" value="<?= $cliente->id ?>">
-                    <input type="text" name="nome" value="<?= $cliente->nome ?>" required>
-                    <input type="date" name="data_nascimento" value="<?= $cliente->data_nascimento ?>" required>
-                    <input type="text" name="cpf" value="<?= $cliente->cpf ?>" required>
-                    <input type="text" name="endereco" value="<?= $cliente->endereco ?>" required>
-                    <input type="text" name="telefone" value="<?= $cliente->telefone ?>" required>
-                    <input type="email" name="email" value="<?= $cliente->email ?>" required>
-                    <button type="submit" name="editar">Editar</button>
-                </form>
+                <a href="editar.php?id=<?= htmlspecialchars($cliente->id) ?>">Editar</a>
             </li>
         <?php endforeach; ?>
     </ul>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -57,30 +57,4 @@ class ClienteService
         return true;
     }
 
-    public function buscarClientePorId($id)
-    {
-        if (empty($id) || !is_numeric($id)) {
-            throw new \InvalidArgumentException("ID inválido.");
-        }
-
-        $stmt = $this->db->prepare("SELECT * FROM clientes WHERE id = ?");
-        $stmt->execute([$id]);
-        $row = $stmt->fetch();
-
-        if (!$row) {
-            return null; // Retorna null se o cliente não for encontrado
-        }
-
-        return new Cliente(
-            $row['id'], 
-            $row['nome'], 
-            $row['data_nascimento'], 
-            $row['cpf'], 
-            $row['endereco'], 
-            $row['telefone'], 
-            $row['email']
-        );
-    }
-   
-
 }

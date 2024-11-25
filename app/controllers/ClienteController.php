@@ -33,4 +33,9 @@ class ClienteController
         return $this->clienteService->deletarCliente($id);
     }
 
+    public function buscarClientePorId($id)
+    {
+        return $this->clienteService->buscarClientePorId($id);
+    }
+
 }
