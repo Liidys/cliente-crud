@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="endereco" value="<?= htmlspecialchars($cliente->endereco) ?>" placeholder="Endereço" required>
         <input type="text" name="telefone" value="<?= htmlspecialchars($cliente->telefone) ?>" placeholder="Telefone" required>
         <input type="email" name="email" value="<?= htmlspecialchars($cliente->email) ?>" placeholder="Email" required>
-        <button type="submit">Salvar Alterações</button>
+        <button type="submit" class="btn-editar">Salvar Alterações</button>
     </form>
-    <a href="index.php">Voltar</a>
+    <a href="index.php" class="btn-editar">Voltar</a>
 </body>
 </html>

@@ -31,6 +31,7 @@ $clientes = $clienteController->listarClientes();
     <meta charset="UTF-8">
     <title>Cliente CRUD</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/scripts.js" defer></script>
 </head>
 <body>
     <h1>Cadastro de Clientes</h1>
@@ -43,7 +44,7 @@ $clientes = $clienteController->listarClientes();
         <input type="text" name="endereco" placeholder="Endereço" required>
         <input type="text" name="telefone" placeholder="Telefone" required>
         <input type="email" name="email" placeholder="Email" required>
-        <button type="submit" name="criar">Criar</button>
+        <button type="submit" name="criar" class="btn-editar">Criar</button>
     </form>
 
     <h2>Listar Clientes</h2>
@@ -51,11 +52,14 @@ $clientes = $clienteController->listarClientes();
         <?php foreach ($clientes as $cliente): ?>
             <li>
                 <?= htmlspecialchars($cliente->nome) ?> - <?= htmlspecialchars($cliente->data_nascimento) ?> - <?= htmlspecialchars($cliente->cpf) ?> - <?= htmlspecialchars($cliente->endereco) ?> - <?= htmlspecialchars($cliente->telefone) ?> - <?= htmlspecialchars($cliente->email) ?>
-                <form method="POST" style="display:inline;">
+                <form method="POST" onsubmit="return confirmarExclusao();" style="display:inline;">
                     <input type="hidden" name="id" value="<?= htmlspecialchars($cliente->id) ?>">
-                    <button type="submit" name="deletar">Deletar</button>
+                    <button type="submit" name="deletar" class="btn-deletar">Deletar</button>
                 </form>
-                <a href="editar.php?id=<?= htmlspecialchars($cliente->id) ?>">Editar</a>
+
+
+                <a href="editar.php?id=<?= htmlspecialchars($cliente->id) ?>" class="btn-editar">Editar</a>
+
             </li>
         <?php endforeach; ?>
     </ul>

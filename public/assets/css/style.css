@@ -18,12 +18,29 @@ form input, form button {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #ee3b13;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-editar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #4CAF50; 
+    color: #fff; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-editar:hover {
+    background-color: #00b32a; /* Cor no hover */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #e45d15;
 }
