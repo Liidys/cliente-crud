@@ -1,16 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 20px;
+    background-color: rgb(255, 255, 255);
 }
 
 h1, h2 {
     color: #333;
 }
 
-nav{
-    background-color: #333;
-    overflow: hidden;
-    margin-bottom: 20px;
+.subtitulo {
+    text-align: center;
+    
+}
+
+.n {
+    
+    /* background-color: #c15c5c69; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 form input, form button {
     margin: 5px;
@@ -35,6 +43,10 @@ button {
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+}
+
+.btn-primary {
+    
 }
 
 .btn-editar:hover {

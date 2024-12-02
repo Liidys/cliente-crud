@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"ClienteTest::testCriarCliente":0.027,"ClienteTest::testListarClientes":0.001,"ClienteTest::testEditarCliente":0.001,"ClienteTest::testDeletarCliente":0.001}}
+{"version":1,"defects":[],"times":{"ClienteTest::testCriarCliente":0.011,"ClienteTest::testListarClientes":0.001,"ClienteTest::testEditarCliente":0.001,"ClienteTest::testDeletarCliente":0.001}}
