@@ -18,8 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['telefone'],
             $_POST['email']
         );
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
     } elseif (isset($_POST['deletar'])) {
         $clienteController->deletarCliente($_POST['id']);
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
     }
 }
 
