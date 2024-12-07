@@ -18,8 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['telefone'],
             $_POST['email']
         );
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
     } elseif (isset($_POST['deletar'])) {
         $clienteController->deletarCliente($_POST['id']);
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
     }
 }
 
@@ -74,8 +78,9 @@ $clientes = $clienteController->listarClientes();
                     <form method="POST" onsubmit="return confirmarExclusao();" style="display:inline;">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($cliente->id) ?>">
                         <button type="submit" name="deletar" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Deletar</button>
+                        <a href="editar.php?id=<?= htmlspecialchars($cliente->id) ?>" class="btn-editar"><i class="fas fa-edit"></i> Editar</a>
                     </form>
-                    <a href="editar.php?id=<?= htmlspecialchars($cliente->id) ?>" class="btn-editar"><i class="fas fa-edit"></i> Editar</a>
+                    
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -1,58 +1,148 @@
+/* Reset de margens e padding para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 20px;
-    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+    color: #333; /* Texto com bom contraste */
 }
 
 h1, h2 {
-    color: #333;
-}
-
-.subtitulo {
+    color: #222; /* Cor do título mais forte */
     text-align: center;
-    
 }
 
-.n {
-    
-    /* background-color: #c15c5c69; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-form input, form button {
-    margin: 5px;
-    padding: 10px;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-button {
-    background-color: #ee3b13;
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #444; /* Subtítulo com um tom mais suave */
+}
+
+/* Estilo do formulário */
+form {
+    background-color: #fff; /* Fundo branco para o formulário */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+/* Estilo para inputs e botões */
+form input,
+form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+form input:focus,
+form button:focus {
+    outline: none;
+    border-color: #0056b3; /* Cor ao focar no input */
+}
+
+form input {
+    font-size: 1rem;
+    background-color: #f9f9f9; /* Fundo suave para os inputs */
+}
+
+form button {
+    background-color: #007bff; /* Cor azul agradável para o botão */
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease; /* Transição suave no hover */
 }
 
-.btn-editar {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color:  #4CAF50; 
-    color: #fff; 
+form button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+/* Estilo da lista de clientes */
+ul.list-group {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+ul.list-group li {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+ul.list-group li span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+ul.list-group li form {
+    display: inline;
+}
+
+ul.list-group li .btn-editar {
+    display: flex;
+    background-color: #4CAF50;
+    color: #fff;
     text-decoration: none;
+    border: none;
+    padding: 4px 20px;
     border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn-primary {
-    
+ul.list-group li .btn-editar:hover {
+    background-color: #45a049;
 }
 
-.btn-editar:hover {
-    background-color: #00b32a; /* Cor no hover */
+/* Estilo do botão de deletar */
+ul.list-group li button {
+    background-color: #e44d3a;
+    color: white;
+    border: none;
+    padding: 6px 1px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #e45d15;
+ul.list-group li button:hover {
+    background-color: #c0392b; /* Cor do botão de deletar no hover */
+}
+
+/* Adicionando um pouco mais de espaçamento entre os elementos */
+.container {
+    padding: 30px;
+}
+
+.subtitulo {
+    margin-bottom: 20px;
+}
+
+.n {
+    margin-bottom: 40px;
 }
