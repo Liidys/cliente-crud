@@ -35,6 +35,7 @@ $clientes = $clienteController->listarClientes();
     <meta charset="UTF-8">
     <title>Cadastro de Clientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRAB+4/6FwGktl1T7vbd3KumftKDXcTcs3tUt0Ck12vLEL8j0wPwQAX1C" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/image/favicon.png" type="image/x-icon"> 
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/scripts.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

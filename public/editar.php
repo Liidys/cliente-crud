@@ -9,20 +9,19 @@ use App\Services\ClienteService;
 $clienteService = new ClienteService();
 $clienteController = new ClienteController($clienteService);
 
-// Verificar se o ID foi passado via GET
+
 if (!isset($_GET['id'])) {
     die("ID do cliente não fornecido.");
 }
 
 $id = $_GET['id'];
 
-// Buscar o cliente pelo ID
 $cliente = $clienteController->buscarClientePorId($id);
 if (!$cliente) {
     die("Cliente não encontrado.");
 }
 
-// Atualizar o cliente quando o formulário for enviado
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $clienteController->editarCliente(
         $id,
@@ -34,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_POST['email']
     );
 
-    // Redirecionar após a edição
+    
     header("Location: index.php");
     exit;
 }
@@ -45,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <title>Editar Cliente</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/image/favicon.png" type="image/x-icon"> 
 </head>
 <body>
     <h1>Editar Cliente</h1>
@@ -57,6 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" name="email" value="<?= htmlspecialchars($cliente->email) ?>" placeholder="Email" required>
         <button type="submit" class="btn-editar">Salvar Alterações</button>
     </form>
-    <a href="index.php" class="btn-editar">Voltar</a>
+    <a href="index.php" class="btn-voltar">Voltar</a>
 </body>
 </html>
