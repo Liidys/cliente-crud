@@ -102,20 +102,20 @@ ul.list-group li form {
 }
 
 ul.list-group li .btn-editar {
-    display: inline-block;
+    display: flex;
     background-color: #4CAF50;
     color: #fff;
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    text-align: center;
+    border: none;
+    padding: 4px 20px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 ul.list-group li .btn-editar:hover {
-    background-color: #45a049; /* Cor no hover */
+    background-color: #45a049;
 }
 
 /* Estilo do botão de deletar */
@@ -123,8 +123,9 @@ ul.list-group li button {
     background-color: #e44d3a;
     color: white;
     border: none;
-    padding: 6px 12px;
+    padding: 6px 1px;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -144,28 +145,4 @@ ul.list-group li button:hover {
 
 .n {
     margin-bottom: 40px;
-}
-
-/* Adaptação para dispositivos móveis */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    form input, form button {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    ul.list-group li {
-        font-size: 0.9rem;
-    }
 }
